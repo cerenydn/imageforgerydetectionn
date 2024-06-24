@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body class='body'>
+    <nav class='navbar'>
+        <div class='logo'>PicDetect.com</div>
+        
+        <ul class="menu">
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/giris">Giriş Yap</a></li>
+            <li><a href="/kayit">Kayıt Ol</a></li>
+            <li><a href="/yardim">Yardım</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="/logout">Çıkış Yap</a></li>
+                <li><a href="/rapor">Raporlama</a></li>
+            {% endif %}
+        </ul>
+
+    </nav>
+    <div class="dashboard-container">
+        <div class='title'><h1>Yönetici Paneli</h1></div>
+        
+
+        <div class='adduser' id="add-user-section">
+            <!-- Yeni Kullanıcı Ekle -->
+            <div> Yeni Kullanıcı Ekle </div>
+            <form class='form' action="{{ url_for('kayit') }}" method="post">
+                <label for="ad"></label>
+                <input type="text" id="ad" name="ad" placeholder="Ad" required>
+                <label for="soyad"></label>
+                <input type="text" id="soyad" name="soyad" placeholder="Soyad" required>
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="E-posta" required>
+                <label for="password"></label>
+                <input type="password" id="password" name="password" placeholder="Şifre" required>
+                <label class='role' for="role"></label>
+                <select id="role" name="role">
+                    <option value="admin">Admin</option>
+                    <option value="standard">Standart</option>
+                </select>
+                <button type="submit">Kullanıcı Ekle</button>
+            </form>
+        </div>
+
+        <div class='database' id="backup-section">
+            <!-- Veritabanını Yedekle -->
+            Yedekleme ve Geri Alma
+            <form class='backup' action="/backup" method="GET">
+                <button type="submit">Veritabanını Yedekle</button>
+            </form>
+            <form class='restore' action="/restore" method="GET">
+                <button type="submit">Veritabanını Geri Al</button>
+            </form>
+        </div>
+
+        <div class='logout' id="logout-section">
+            <!-- Çıkış Yap -->
+            <form action="{{ url_for('logout') }}" method="GET">
+                <button type="submit">Çıkış Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Tüm bölümleri gizle
+            var sections = document.querySelectorAll('.dashboard-container > div');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            
+            // Belirtilen bölümü göster
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

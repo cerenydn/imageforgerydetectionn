@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Kullanıcı Listesi</title>
+</head>
+<body>
+    <h1>Kullanıcı Listesi</h1>
+    <table>
+        <thead>
+            <tr>
+                
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>E-posta</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                
+                <td>{{ user.ad }}</td>
+                <td>{{ user.soyad }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('kayit') }}">Yeni Kullanıcı Ekle</a>
+</body>
+</html>

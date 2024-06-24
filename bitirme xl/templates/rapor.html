@@ -1,0 +1,49 @@
+<!-- rapor.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raporlama Sayfası</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='rapor.css') }}">
+</head>
+<body class='body'>
+    <nav class='navbar'>
+        <div class='logo'> PicDetect.com</div>
+        
+        <ul class="menu">
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/giris">Giriş Yap</a></li>
+            <li><a href="/kayit">Kayıt Ol</a></li>
+            <li><a href="/yardim">Yardım</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="/rapor">Raporlama</a></li>
+                <li><a href="/logout">Çıkış Yap</a></li>
+            {% endif %}
+        </ul>
+        
+    </nav>
+    <h1>Yüklenen Resimler Raporu</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Resim</th>
+                <th>Sonuç</th>
+                <th>Yükleme Zamanı</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for upload in uploads %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><img src="{{ url_for('static', filename='uploads/' + upload.filename) }}" alt="Yüklenen Resim" style="max-width: 200px; max-height: 200px;"></td>
+                <td>{{ upload.result }}</td>
+                <td>{{ upload.upload_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .body{
+    display: grid;
+    background: 
+        linear-gradient(90deg, #ccc 0.001px, transparent 0.4px),
+        linear-gradient(#ccc 0.1px, transparent 0.4px) ; /* İnce çizgiler */
+        background-size: 50px 50px; /* Büyük kare boyutu */
+  }
+  
+  .navbar {
+    background-color: #3498db	;
+    height: 55px;
+    margin-top: -5px;
+  }
+  
+  
+  .logo{
+    margin-left: 14px;
+    padding-top: 10px;
+    color: black;
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .menu {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+    color: black;
+  }
+  .menu li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .menu li a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+  }
+  
+  .menu li a:hover {
+    text-decoration: underline;
+  }
+  
+  .box{
+    margin-top: 100px;
+    margin-left: 550px;
+    height: 150px;
+    width: 350px;
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #E3DFEE;
+  }
+  
+  .login-box{
+    margin-left: 55px;
+    margin-top: 10px;
+  }
+  
+  .mail{
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+  
+  .password{
+    margin-top: 15px;
+    margin-left: 23px;
+  }
+  
+  .button{
+    margin-top: 25px;
+    margin-left: 105px;
+  }
+  
+  .yardim{
+    margin-top: 100px;
+    margin-left: 550px;
+    height: 150px;
+    width: 350px;
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #E3DFEE;
+  }
+  
+  .help{
+    margin-left: 55px;
+    margin-top: 45px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+    font-size: 20px;
+  }

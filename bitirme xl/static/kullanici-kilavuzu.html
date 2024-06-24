@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Kılavuzu: Resim Yükleme ve Tahmin Uygulaması</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Kullanıcı Kılavuzu: Resim Yükleme ve Tahmin Uygulaması</h1>
+
+    <h2>İçindekiler</h2>
+    <ol>
+        <li><a href="#giriş">Giriş</a></li>
+        <li><a href="#kurulum">Kurulum</a></li>
+        <li><a href="#kullanım">Kullanım</a>
+            <ul>
+                <li><a href="#kayıt-olma">Kayıt Olma</a></li>
+                <li><a href="#giriş-yapma">Giriş Yapma</a></li>
+                <li><a href="#resim-yükleme-ve-tahmin-alma">Resim Yükleme ve Tahmin Alma</a></li>
+                <li><a href="#yardım-menüsüne-erişim">Yardım Menüsüne Erişim</a></li>
+            </ul>
+        </li>
+        <li><a href="#sorun-giderme">Sorun Giderme</a></li>
+        <li><a href="#yedekleme-ve-geri-yükleme">Yedekleme ve Geri Yükleme</a></li>
+    </ol>
+
+    <h2 id="giriş">Giriş</h2>
+    <p>Bu uygulama, kullanıcıların bir resim dosyası yükleyerek bu resmin sahte (forged) veya gerçek (authentic) olup olmadığını tahmin etmelerini sağlar. Uygulama, bir Flask web sunucusu ve bir Keras derin öğrenme modelini kullanmaktadır.</p>
+
+    <h2 id="kurulum">Kurulum</h2>
+    <ol>
+        <li><b>Web Tarayıcınızda Uygulamaya Erişmeniz yeterlidir.:</b>
+            <pre><code>http://127.0.0.1:5000</code></pre>
+        </li>
+    </ol>
+
+    <h2 id="kullanım">Kullanım</h2>
+
+    <h3 id="kayıt-olma">Kayıt Olma</h3>
+    <ol>
+        <li><b>Ana Sayfadan "Kayıt Ol" Linkine Tıklayın:</b></li>
+        <img src="static/images/kayit_ol.png" alt="Kayıt Ol">
+        <li><b>Kayıt Formunu Doldurun ve Gönderin:</b>
+            <ul>
+                <li>Ad, Soyad, E-posta ve Şifre bilgilerinizi girin.</li>
+                <li>"Kayıt Ol" butonuna tıklayın.</li>
+                <li>Kayıt başarılı olduğunda, giriş sayfasına yönlendirileceksiniz.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3 id="giriş-yapma">Giriş Yapma</h3>
+    <ol>
+        <li><b>Ana Sayfadan "Giriş Yap" Linkine Tıklayın:</b></li>
+        <img src="static/images/giris_yap.png" alt="Giriş Yap">
+        <li><b>Giriş Formunu Doldurun ve Gönderin:</b>
+            <ul>
+                <li>Kayıt sırasında kullandığınız E-posta ve Şifre bilgilerinizi girin.</li>
+                <li>"Giriş Yap" butonuna tıklayın.</li>
+                <li>Giriş başarılı olduğunda, ana sayfaya yönlendirileceksiniz ve hoş geldiniz mesajı göreceksiniz.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3 id="resim-yükleme-ve-tahmin-alma">Resim Yükleme ve Tahmin Alma</h3>
+    <ol>
+        <li><b>Ana Sayfada "Resim Yükleyin" Bölümüne Gidin:</b></li>
+        <img src="static/images/resim_yukle.png" alt="Resim Yükleme">
+        <li><b>Resim Dosyasını Seçin ve Yükleyin:</b>
+            <ul>
+                <li>"Resim Seç" butonuna tıklayın ve bir resim dosyası seçin.</li>
+                <li>Seçilen resim önizlemede görüntülenecektir.</li>
+                <li>"Kontrol Et" butonuna tıklayarak resmi yükleyin ve tahmin sonucunu alın.</li>
+            </ul>
+        </li>
+        <li><b>Tahmin Sonucunu Görüntüleyin:</b>
+            <ul>
+                <li>Tahmin sonucunda resmin sahte (forged) veya gerçek (authentic) olduğu bilgisi ve güven yüzdesi gösterilecektir.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3 id="yardım-menüsüne-erişim">Yardım Menüsüne Erişim</h3>
+    <ol>
+        <li><b>Yardım Sayfasına Gidin:</b>
+            <ul>
+                <li>Ana sayfadaki "Yardım" linkine tıklayın.</li>
+                <li>Yardım sayfası açılacaktır.</li>
+            </ul>
+        </li>
+        <li><b>F1 Tuşuna Basarak Yardım Sayfasını Açın:</b>
+            <ul>
+                <li>Klavyenizde F1 tuşuna basarak yardım sayfasını yeni bir pencerede açabilirsiniz.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2 id="sorun-giderme">Sorun Giderme</h2>
+    <ul>
+        <li><b>Giriş Yapamıyorum:</b>
+            <ul>
+                <li>E-posta ve şifrenizin doğru olduğundan emin olun.</li>
+                <li>Hala giriş yapamıyorsanız, kayıt işlemini tekrarlayın.</li>
+            </ul>
+        </li>
+        <li><b>Resim Yükleyemiyorum:</b>
+            <ul>
+                <li>Yüklemeye çalıştığınız dosyanın bir resim dosyası olduğundan emin olun.</li>
+                <li>Dosya seçiminizi kontrol edin ve tekrar deneyin.</li>
+            </ul>
+        </li>
+        <li><b>Tahmin Sonucu Gösterilmiyor:</b>
+            <ul>
+                <li>İnternet bağlantınızı kontrol edin.</li>
+                <li>Resmin boyutunun ve formatının doğru olduğundan emin olun.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2 id="yedekleme-ve-geri-yükleme">Yedekleme ve Geri Yükleme</h2>
+    <ol>
+        <li><b>Veritabanı Yedekleme:</b>
+            <ul>
+                <li>Yönetim paneline gidin ve "Veritabanı Yedekleme" linkine tıklayın.</li>
+                <li>Veritabanı yedeği oluşturulacaktır.</li>
+            </ul>
+        </li>
+        <li><b>Veritabanı Geri Yükleme:</b>
+            <ul>
+                <li>Yönetim paneline gidin ve "Veritabanı Geri Yükleme" linkine tıklayın.</li>
+                <li>Veritabanı yedeği geri yüklenecektir.</li>
+            </ul>
+        </li>
+    </ol>
+
+    
+
+    <p>Bu kılavuzun uygulamanızı verimli bir şekilde kullanmanıza yardımcı olacağını umuyoruz. Herhangi bir sorunuz varsa, lütfen iletişim sayfamızdan bize ulaşın.</p>
+
+</body>
+</html>

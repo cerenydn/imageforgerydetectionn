@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .body{
+    display: grid;
+    background: 
+        linear-gradient(90deg, #ccc 0.001px, transparent 0.4px),
+        linear-gradient(#ccc 0.1px, transparent 0.4px) ; /* İnce çizgiler */
+        background-size: 50px 50px; /* Büyük kare boyutu */
+  }
+  
+  .navbar {
+    background-color: #3498db	;
+    height: 55px;
+    margin-top: -5px;
+  }
+  
+  
+  .logo{
+    margin-left: 14px;
+    padding-top: 10px;
+    color: black;
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .menu {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+    color: black;
+  }
+  .menu li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .menu li a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+  }
+  
+  .menu li a:hover {
+    text-decoration: underline;
+  }
+  
+  .title{
+    margin-top: 70px;
+    margin-left: 243px;
+    width: 950px;
+    height: 50px;
+    background: #E0FFFF;
+    border-radius: 5px;
+  }
+
+  .title h1{
+    margin-left: 360px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+  }
+
+
+  .box{
+    margin-top: 100px;
+    margin-left: 550px;
+    height: 200px;
+    width: 350px;
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #E3DFEE;
+  }
+  
+  .login-box{
+    margin-left: 55px;
+    margin-top: 10px;
+  }
+  
+  .mail{
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+  
+  .password{
+    margin-top: 15px;
+    margin-left: 23px;
+  }
+  
+  .button{
+    margin-top: 25px;
+    margin-left: 105px;
+  }
+  
+  .register-link{
+  
+    margin-top: 28px;
+    margin-left: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+  
+  }
+
+  .userlist{
+    margin-top: 100px;
+    margin-left: 450px;
+    height: 100px;
+    width: 500px;
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #E3DFEE;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+  }
+
+  .userlist table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.userlist th, .userlist td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.adduser .form label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.adduser .form input, .adduser .form select {
+    width: calc(100% - 10px); /* 10px padding compensation */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.adduser .form button {
+    grid-column: span 2;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 65px;
+}
+
+.adduser .form button:hover {
+    background-color: #45a049;
+}
+
+.adduser .form .role {
+    margin-top: 5px;
+}
+
+
+  .adduser{
+    margin-top: 100px;
+    margin-left: 450px;
+    height: 300px;
+    width: 500px;
+    display: flex;
+    margin-bottom: 15px;
+    background-color: #E3DFEE;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+    font-style: italic;
+  }
+
+  .form label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form button {
+    grid-column: span 2;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 65px;
+}
+
+.form button:hover {
+    background-color: #45a049;
+}
+
+.role{
+  margin-top:5px;
+}
+
+.form{
+  margin-top: 50px;
+}
+
+  .database{
+    
+        margin-top: 100px;
+        margin-left: 450px;
+        height: 100px;
+        width: 500px;
+        display: flex;
+        margin-bottom: 15px;
+        background-color: #E3DFEE;
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+        font-style: italic;
+  }
+
+  .database button{
+    background-color: #4CAF50;
+    grid-column: span 2;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+ .backup{
+    width: 155px;
+    height: 5px;
+    margin-top: 40px;
+    margin-left: -80px;
+ }
+
+ .restore{
+  width: 155px;
+  height: 5px;
+  margin-left: 45px;
+  margin-top: 40px;
+ }
+
+  .logout{
+    margin-left: 650px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+
+ 

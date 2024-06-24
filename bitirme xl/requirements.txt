@@ -1,0 +1,10 @@
+Flask==2.0.2
+Flask-Login==0.5.3
+Werkzeug==2.0.2
+torch==1.10.0
+torchvision==0.11.1
+scikit-learn==1.0.2
+matplotlib==3.5.1
+Pillow==9.0.1
+tqdm==4.62.3
+numpy

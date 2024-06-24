@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body class='body'>
+    <nav class='navbar'>
+        <div class='logo'> PicDetect.com</div>
+        <ul class="menu">
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/giris">Giriş Yap</a></li>
+            <li><a href="/kayit">Kayıt Ol</a></li>
+            <li><a href="/yardim">Yardım</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="/logout">Çıkış Yap</a></li>
+                <li><a href="/rapor">Raporlama</a></li>
+            {% else %}
+                <li><a href="/giris">Giriş Yap</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <form action="/result" method="POST">
+        <label for="image_url">Image URL:</label>
+        <input type="text" id="image_url" name="image_url" required><br><br>
+        
+        <label for="additional_info">Additional Info:</label>
+        <textarea id="additional_info" name="additional_info" rows="4" cols="50"></textarea><br><br>
+        
+        <input type="submit" value="Generate Report">
+    </form>
+    
+    <div class='resultbox'>
+    <p class='pppp'>Manipülasyon Tespiti</p>
+    <div class="message">
+        {% if message %}
+            {{ message }}
+        {% else %}
+            No message available.
+        {% endif %}
+    </div> 
+    <a class='uyari' href="{{ url_for('upload_file') }}">Yükleme sayfasına dönün</a> 
+    
+    <button class="report-button" onclick="report('{{ result_filename }}')">Raporla</button>
+        
+</div>
+<script>
+    function report(uploads) {
+        alert(`Raporlama işlemi için ${uploads} dosyası seçildi.`);
+        window.location.href = "/rapor?filename=" + uploads; // Rapor ekleme sayfasına yönlendirme
+    }
+</script>
+</body>
+</html>

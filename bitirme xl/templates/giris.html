@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - resim.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='giris.css') }}">
+</head>
+<body class='body'>
+    <nav class='navbar'>
+        <div class='logo'> PicDetect.com</div>
+        
+        <ul class="menu">
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/giris">Giriş Yap</a></li>
+            <li><a href="/kayit">Kayıt Ol</a></li>
+            <li><a href="/yardim">Yardım</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="/rapor">Raporlama</a></li>
+                <li><a href="/logout">Çıkış Yap</a></li>
+            {% endif %}
+        </ul>
+        
+    </nav>
+    
+    <div class='box'> 
+        <div class="content">
+            <div class="login-box">
+                <form id="login-form" action="/giris" method="post">
+                    <div> 
+                        <label for="email">E-posta:</label>
+                        <input class='mail' type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Şifre:</label>
+                        <input class='password' type="password" id="password" name="password" required>
+                    </div>
+                    <button class='button' type="submit">Giriş Yap</button>
+                    
+
+                </form>
+                <p class="register-link">Hesabınız yok mu? <a href="/kayit">Kayıt Ol</a></p>
+                {% for message in get_flashed_messages() %}
+                    <p class="error-message">{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F1') { // F1 tuşunun kodu
+                event.preventDefault();
+                window.open('{{ url_for('static', filename='help.html') }}', 'Yardım', 'width=800,height=600');
+            }
+        });
+    </script>
+</body>
+</html>
