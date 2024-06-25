@@ -1,93 +1,94 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .body{
-    background-color: #f6f4f3;
-  }
-  
-  
-  .navbar {
-    background-color: #3498db	;
-    height: 55px;
-    margin-top: -5px;
-  }
-  
-  .logo{
-    margin-left: 14px;
-    padding-top: 10px;
-    color: black;
-    font-size: 30px;
-    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  
-  .menu {
-    list-style: none;
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -30px;
-    color: black;
-  }
-  .menu li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  .menu li a {
-    color: black;
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
-    font-style: italic;
-  }
-  
-  .menu li a:hover {
-    text-decoration: underline;
-  }
-
-  .resultbox{
-    height: 400px;
-    width: 600px;
-    background-color: antiquewhite;
-    margin-left: 430px;
-    margin-top: 50px;
-  }
-  .pppp{
-    font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
-    font-style: italic;
-    padding-left:200px;
-    padding-top: 40px;
-  }
-
-  .message{
-    font-size: 15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
-    font-style: italic;
-    margin-left: 200px;
-    margin-top: 60px;
-  }
-
-  .uyari{
-    width: 100px;
-    height: 30px;
-    background-color: white;
-    font-size: 15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
-    font-style: italic;
-    margin-left: 200px;
-    margin-top: 1080px;
-  }
-
-  .report-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
+  margin: 0;
+  padding: 0;
 }
+
+.body{
+  display: grid;
+background: 
+    linear-gradient(90deg, #ccc 0.001px, transparent 0.4px),
+    linear-gradient(#ccc 0.1px, transparent 0.4px) ; 
+    background-size: 50px 50px; 
+}
+
+
+.navbar {
+  background-color: #3498db	;
+  height: 55px;
+  margin-top: -5px;
+}
+
+.logo{
+  margin-left: 14px;
+  padding-top: 10px;
+  color: black;
+  font-size: 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.menu {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -30px;
+  color: black;
+}
+.menu li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.menu li a {
+  color: black;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+  font-style: italic;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+.resultbox{
+  height: 400px;
+  width: 600px;
+  background-color: #E3DFEE;
+  margin-left: 430px;
+  margin-top: 50px;
+}
+.pppp{
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+  font-style: italic;
+  padding-left:160px;
+  padding-top: 40px;
+}
+
+.message{
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+  font-style: italic;
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.uyaribox{
+  width: 200px;
+  height: 30px;
+  background-color: #E3DFEE;
+  margin-left: 220px;
+  margin-top: 20px;
+}
+
+.uyari{
+  
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif ;
+  font-style: italic;
+ 
+}
+
