@@ -32,9 +32,9 @@
 
     <div class='box'>        
         <h1>Resim Yükleyin</h1>
-        <form id="uploadForm" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <form id="uploadForm" action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
             <input class='secbutton' type="file" id="fileInput" name="file" accept="image/png, image/jpeg, image/jpg" onchange="previewImage()">
-            <button type="submit" class="yuklebutton">Yükle</button>
+            <button type="submit" class="yuklebutton" onclick="upload()">Yükle</button>
         </form>
     </div>
 
