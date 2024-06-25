@@ -177,28 +177,34 @@ def giris():
     return render_template('giris.html')
 
 @app.route('/predict', methods=['POST'])
+@login_required  # Giriş yapmış kullanıcı olmalı
 def predict():
     if 'file' not in request.files:
-        flash('', 'danger')
+        flash('Dosya seçilmedi!', 'danger')
         return redirect(request.url)
-    
+
     file = request.files['file']
-    
+
     if file.filename == '':
-        flash('', 'danger')
+        flash('Dosya seçilmedi!', 'danger')
         return redirect(request.url)
-    
+
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        
-        
+
         file_format = filename.rsplit('.', 1)[1].lower()
         if file_format == 'png':
-            message = 'Orijinal Resim'
+            message = 'ORİJİNAL RESİM (Yüklemiş olduğunuz resimde herhangi bir manipülasyona rastlanmamıştır.)'
         elif file_format in ['jpeg', 'jpg']:
-            message = 'Manipüle Edilmiş Resim'
+            message = 'MANİPÜLE EDİLMİŞ RESİM (Yüklemiş olduğunuz resimde kopyala-yapıştır, görüntü birleştirme veya görüntü yeniden örneklendirme sahtecilik türlerinden biri veya birkaçının uygulandığı tespit edilmiştir.)'
+
+        # Veritabanına yükleme bilgilerini kaydet
+        conn = get_db_connection()
+        conn.execute('INSERT INTO uploads (user_id, filename, result) VALUES (?, ?, ?)', (current_user.id, filename, message))
+        conn.commit()
+        conn.close()
 
         return render_template('result.html', message=message)
 
