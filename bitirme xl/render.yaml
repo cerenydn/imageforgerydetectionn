@@ -1,3 +1,6 @@
 services:
   - name: web
-    start_command: gunicorn appp:app -b 0.0.0.0:8080
+    env: python
+    startCommand: python appp.py
+    port: 5000
+
