@@ -114,5 +114,5 @@ webencodings==0.5.1
 Werkzeug==3.0.2
 wheel==0.43.0
 wrapt==1.16.0
-poetry = 1.7.1
-python = 3.11.9
+poetry == 1.7.1
+python == 3.11.9
