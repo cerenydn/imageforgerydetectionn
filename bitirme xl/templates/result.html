@@ -22,30 +22,19 @@
             {% endif %}
         </ul>
     </nav>
-
-    <form action="/result" method="POST">
-        <label for="image_url">Image URL:</label>
-        <input type="text" id="image_url" name="image_url" required><br><br>
-        
-        <label for="additional_info">Additional Info:</label>
-        <textarea id="additional_info" name="additional_info" rows="4" cols="50"></textarea><br><br>
-        
-        <input type="submit" value="Generate Report">
-    </form>
-    
     <div class='resultbox'>
-    <p class='pppp'>Manipülasyon Tespiti</p>
+    <p class='pppp'>Manipülasyon Tespiti Sonucu</p>
     <div class="message">
-        {% if message %}
+        {% if message%}
             {{ message }}
         {% else %}
             No message available.
         {% endif %}
     </div> 
-    <a class='uyari' href="{{ url_for('upload_file') }}">Yükleme sayfasına dönün</a> 
     
-    <button class="report-button" onclick="report('{{ result_filename }}')">Raporla</button>
-        
+    <div class='uyaribox'>
+    <a class='uyari' href="{{ url_for('upload_file') }}">Yükleme sayfasına dönün</a> 
+</div>
 </div>
 <script>
     function report(uploads) {
